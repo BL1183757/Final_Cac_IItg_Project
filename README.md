@@ -15,6 +15,20 @@ To design and implement an intelligent, real-time pricing engine for urban parki
 
 ---
 
+## Project Architecture
+
+flowchart TD
+    A[Raw Data (dataset.csv)] --> B[Data Preprocessing]
+    B --> C1[Model 1: Linear Pricing]
+    B --> C2[Model 2: Demand-Based Pricing]
+    C1 --> D[Predicted Prices]
+    C2 --> D
+    D --> E[Bokeh Visualization]
+    D --> F[Report/Output]
+    B --> G{Optional: Pathway\nReal-Time Streaming}
+    G --> B
+
+
 ## Models Implemented
 
 ### Model 1: Baseline Linear Pricing
